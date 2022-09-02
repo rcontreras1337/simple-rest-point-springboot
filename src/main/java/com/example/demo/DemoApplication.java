@@ -1,6 +1,6 @@
 package com.example.demo;
 
-import com.example.demo.models.student.Student;
+import com.example.demo.models.Student;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
