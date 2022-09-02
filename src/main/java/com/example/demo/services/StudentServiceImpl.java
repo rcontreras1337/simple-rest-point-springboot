@@ -7,9 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
- * Servicio que se usara por el controlador para la generacion del endpoint de Student
+ * Servicio que se usara por el controlador para la generación del endpoint de Student
  */
 @Service
 public class StudentServiceImpl implements StudentDAO {
@@ -20,7 +21,7 @@ public class StudentServiceImpl implements StudentDAO {
         this.studentRepository = studentRepository;
     }
 
-    /** metodo que obtiene la lista de estudiantes herado del DAO
+    /** método que obtiene la lista de estudiantes heredada del DAO
      * @return List<Student>
      */
     @Override
@@ -33,7 +34,13 @@ public class StudentServiceImpl implements StudentDAO {
      */
     @Override
     public void addNewStudent(Student student) {
-        System.out.println(student);
+        Optional<Student> studentXEmail = studentRepository.findStudentXEmail(student.getEmail());
+        if (studentXEmail.isPresent()) {
+            throw new IllegalStateException("Email Existente");
+        }
+        // Si entra al throw no se ejecutara esta línea, por eso no está en el else
+        studentRepository.save(student);
+
     }
 
 }
