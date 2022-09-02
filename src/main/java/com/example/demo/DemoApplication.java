@@ -5,6 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Arrays;
+import java.util.List;
+
+
 @SpringBootApplication
 @RestController
 public class DemoApplication {
@@ -14,7 +18,7 @@ public class DemoApplication {
     }
 
     @GetMapping
-    public String helloWorld(){
-        return "Hello world loco";
+    public List<String> helloWorld(){
+        return Arrays.asList("Hello"," world","loco");
     }
 }
