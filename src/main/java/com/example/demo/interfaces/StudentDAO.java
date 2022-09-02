@@ -15,7 +15,20 @@ public interface StudentDAO {
       */
      List<Student> getStudentsList();
 
+     /**
+      * @param student student
+      */
      void addNewStudent(Student student);
 
+     /**
+      * @param studentId studentId
+      */
      void deleteStudent(Long studentId);
+
+     /**
+      * @param studentId studentId
+      * @param name name
+      * @param email email
+      */
+     void updateStudent(Long studentId, String name, String email);
 }
