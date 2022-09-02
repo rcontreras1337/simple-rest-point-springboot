@@ -43,4 +43,17 @@ public class StudentServiceImpl implements StudentDAO {
 
     }
 
+    /**
+     * @param studentId studentId
+     */
+    @Override
+    public void deleteStudent(Long studentId) {
+        boolean existsById = studentRepository.existsById(studentId);
+        if(!existsById){
+            throw new IllegalStateException("El estudiante de ID: "+ studentId +" NO EXISTE");
+        }
+        // Si entra al throw no se ejecutara esta línea, por eso no está en el else
+        studentRepository.deleteById(studentId);
+    }
+
 }

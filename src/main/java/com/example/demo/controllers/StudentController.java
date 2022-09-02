@@ -24,7 +24,7 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    /**
+    /** End Point Listar estudiantes
      * @return List<Student>
      */
     @GetMapping(path = "getStudents")
@@ -32,9 +32,21 @@ public class StudentController {
         return studentService.getStudentsList();
     }
 
+    /** End Point Guardar estudiantes
+     * @param student student
+     */
     @PostMapping(path = "saveStudent")
     public void registerNewStudent(@RequestBody Student student){
         studentService.addNewStudent(student);
+    }
+
+    @DeleteMapping(path = "deleteStudent/{studentId}")
+    // El PathVariable indica cuál es la variable que recibe el deleteMapping que es igual
+    // al que se declara arriba en la anotación
+    // DESTACAR QUE SI LA VARIABLE QUE RECIBE TIENE EL MISMO NOMBRE QUE LA VARIABLE QUE SE LE PASA,
+    // NO ES NECESARIO INDICARLE AL @PathVariable A DONDE IRA LA VARIABLE QUE RECIBE EL MÉTODO
+    public void deleteStudent(@PathVariable("studentId") Long studentId){
+        studentService.deleteStudent(studentId);
     }
 
 }
