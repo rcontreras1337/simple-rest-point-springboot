@@ -1,8 +1,21 @@
 package com.example.demo.models;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity //Hibernete
+@Table(name = "students", schema = "student") // Tabla de base datos
 public class Student {
+    @Id
+    @SequenceGenerator(
+        name = "student_sequence",
+        sequenceName = "student_sequence",
+        allocationSize = 1
+    )
+    @GeneratedValue(
+        strategy = GenerationType.SEQUENCE,
+        generator = "student_sequence"
+    )
     private Long idStudent;
     private String name;
     private String email;
