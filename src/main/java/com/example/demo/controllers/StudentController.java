@@ -15,7 +15,7 @@ public class StudentController {
     private final StudentServiceImpl studentService;
 
     public StudentController(StudentServiceImpl studentService) {
-        this.studentService = studentService;
+        this.studentService = new StudentServiceImpl();
     }
 
     @GetMapping(path = "getStudents")
