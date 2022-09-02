@@ -10,6 +10,10 @@ import java.util.List;
  */
 public interface StudentDAO {
 
+     /**
+      * @return List<Student>
+      */
      List<Student> getStudentsList();
 
+     void addNewStudent(Student student);
 }

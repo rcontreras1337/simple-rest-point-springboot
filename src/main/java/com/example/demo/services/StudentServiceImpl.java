@@ -28,4 +28,12 @@ public class StudentServiceImpl implements StudentDAO {
         return studentRepository.findAll();
     }
 
+    /**
+     * @param student student
+     */
+    @Override
+    public void addNewStudent(Student student) {
+        System.out.println(student);
+    }
+
 }
