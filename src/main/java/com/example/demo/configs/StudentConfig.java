@@ -19,17 +19,21 @@ public class StudentConfig {
             Student ruben = new Student(
                 "Ruben",
                 "ruben4tip@gmail.com",
-                LocalDate.of(1994, Month.AUGUST, 17),
-                (short) 28
+                LocalDate.of(1994, Month.AUGUST, 17)
             );
             Student carlos = new Student(
                 "Carlos",
                 "carlos4tip@gmail.com",
-                LocalDate.of(1993, Month.AUGUST, 17),
-                (short) 29
+                LocalDate.of(1995, Month.AUGUST, 4)
             );
 
-            repository.saveAll(Arrays.asList(ruben,carlos));
+            Student fabian = new Student(
+                "Fabian",
+                "fabian4tip@gmail.com",
+                LocalDate.of(1990, Month.AUGUST, 14)
+            );
+
+            repository.saveAll(Arrays.asList(ruben,carlos, fabian));
         };
     }
 }

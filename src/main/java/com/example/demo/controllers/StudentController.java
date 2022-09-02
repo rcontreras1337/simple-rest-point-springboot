@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 /**
- * Controlador para los endpoint de Student
+ * Controlador para los end point de Student
  */
 @RestController
 @RequestMapping(path = "api/v1/student")
@@ -19,7 +19,7 @@ public class StudentController {
     private final StudentServiceImpl studentService;
 
     /**
-     * @param studentService
+     * @param studentService studentService
      */
     @Autowired
     public StudentController(StudentServiceImpl studentService) {

@@ -20,19 +20,6 @@ public class StudentServiceImpl implements StudentDAO {
         this.studentRepository = studentRepository;
     }
 
-
-//     public List<Student> getStudents(){
-//        return Collections.singletonList(
-//            new Student(
-//                1L,
-//                "Ruben",
-//                "ruben4tip@gmail.com",
-//                LocalDate.of(1994, Month.AUGUST, 17),
-//                (short) 28
-//            )
-//        );
-//    }
-
     /** metodo que obtiene la lista de estudiantes herado del DAO
      * @return List<Student>
      */

@@ -2,8 +2,9 @@ package com.example.demo.models;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.time.Period;
 
-@Entity //Hibernete
+@Entity //Hibernate
 @Table(name = "students", schema = "student") // Tabla de base datos
 public class Student {
     @Id
@@ -20,24 +21,23 @@ public class Student {
     private String name;
     private String email;
     private LocalDate dateOfBirthDay;
+    @Transient
     private Short age;
 
     public Student() {
     }
 
-    public Student(Long idStudent, String name, String email, LocalDate dateOfBirthDay, Short age) {
+    public Student(Long idStudent, String name, String email, LocalDate dateOfBirthDay) {
         this.idStudent = idStudent;
         this.name = name;
         this.email = email;
         this.dateOfBirthDay = dateOfBirthDay;
-        this.age = age;
     }
 
-    public Student(String name, String email, LocalDate dateOfBirthDay, Short age) {
+    public Student(String name, String email, LocalDate dateOfBirthDay) {
         this.name = name;
         this.email = email;
         this.dateOfBirthDay = dateOfBirthDay;
-        this.age = age;
     }
 
     public Long getIdStudent() {
@@ -73,7 +73,7 @@ public class Student {
     }
 
     public Short getAge() {
-        return age;
+        return (short)Period.between(this.dateOfBirthDay, LocalDate.now()).getYears();
     }
 
     public void setAge(Short age) {
