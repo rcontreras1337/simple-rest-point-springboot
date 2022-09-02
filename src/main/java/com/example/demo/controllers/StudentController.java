@@ -31,6 +31,6 @@ public class StudentController {
      */
     @GetMapping(path = "getStudents")
     public List<Student> getStudents(){
-        return studentService.getStudents();
+        return studentService.getStudentsList();
     }
 }
