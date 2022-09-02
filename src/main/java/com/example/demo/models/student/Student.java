@@ -26,4 +26,55 @@ public class Student {
         this.dateOfBirthDay = dateOfBirthDay;
         this.age = age;
     }
+
+    public Long getIdStudent() {
+        return idStudent;
+    }
+
+    public void setIdStudent(Long idStudent) {
+        this.idStudent = idStudent;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public LocalDate getDateOfBirthDay() {
+        return dateOfBirthDay;
+    }
+
+    public void setDateOfBirthDay(LocalDate dateOfBirthDay) {
+        this.dateOfBirthDay = dateOfBirthDay;
+    }
+
+    public Short getAge() {
+        return age;
+    }
+
+    public void setAge(Short age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+            "idStudent=" + idStudent +
+            ", name='" + name + '\'' +
+            ", email='" + email + '\'' +
+            ", dateOfBirthDay=" + dateOfBirthDay +
+            ", age=" + age +
+            '}';
+    }
 }
